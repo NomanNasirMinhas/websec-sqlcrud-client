@@ -16,7 +16,7 @@
     let rows =[]
     let loading = true;
     async function getItems(){
-        let result = await fetch("http://localhost:8000/items", {
+        let result = await fetch("https://websec-sql-api.onrender.com/items", {
             method: "POST",
             headers: {
             "Content-Type": "application/json",

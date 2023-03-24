@@ -24,7 +24,7 @@
   let loading = false;
   async function login() {
     loading = true;
-    let result = await fetch("http://localhost:8000/addItem", {
+    let result = await fetch("https://websec-sql-api.onrender.com/addItem", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -13,7 +13,7 @@
     let loading=false;
     async function login(){
         loading=true;
-        let result = await fetch("http://localhost:8000/login", {
+        let result = await fetch("https://websec-sql-api.onrender.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

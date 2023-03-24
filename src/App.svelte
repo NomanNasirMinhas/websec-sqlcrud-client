@@ -9,6 +9,13 @@
   import {auth_token, loggedIn} from "./store/state";
   import { Header, SkipToContent, Content, HeaderUtilities, Button
   } from "carbon-components-svelte";  
+  let ready = false;
+  async function initialize() {
+    let result = await fetch("https://websec-sql-api.onrender.com");
+    let data = await result.json();
+    ready = true;
+  }
+  initialize();
 </script>
 
 <main style="height: 100vh; ">
@@ -69,6 +76,12 @@
     <h1 style="font-weight: bolder; margin-bottom: 50px;">
       Web Application Security
     </h1>
+
+    {#if !ready}
+      <h3 style="font-weight: bolder; margin-bottom: 50px; color: yellow">
+        API is being intilaized. App will work correctly when this text disappears.
+      </h3>
+    {/if}
     
     <Router>
       <Route path="/">

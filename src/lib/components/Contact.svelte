@@ -28,7 +28,7 @@
   let loading = false;
   async function send() {
     loading = true;
-    let result = await fetch("http://localhost:8000/sendMessage", {
+    let result = await fetch("https://websec-sql-api.onrender.com/sendMessage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
